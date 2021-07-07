@@ -1,0 +1,18 @@
+body {
+	background-color: #5f9ea0;
+}
+
+main {
+	background-color: #fff;
+	width: 50vw;
+	min-height: 25vh;
+	border-radius: 3em;
+
+	padding: 1em;
+
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
