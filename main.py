@@ -31,8 +31,6 @@ class pronoun:
 	def GET(self, args):
 		pronouns = args.split('/')
 
-		print(pronouns)
-
 		if pronouns == ['']:
 			# TODO: HOMEPAGE
 			return render_page.index()
@@ -42,7 +40,7 @@ class pronoun:
 			for n in builtin_pronouns:
 				if a == n[0]:
 					pronouns = [pronoun.capitalize() for pronoun in n]
-					return render_page.pronouns(pronouns=pronouns)
+					return render_page.pronouns(pronouns=[pronouns])
 			
 			return render_page.error(error="We don't seem to know that one! Try specifying them all, in a nominative/possesive/oblique format.")
 		elif len(pronouns) == 2:
@@ -52,16 +50,32 @@ class pronoun:
 				# Test the next one so that he/she works (OOPS)
 				if a == n[0] and pronouns[1] == n[1]:
 					pronouns = [pronoun.capitalize() for pronoun in n]
-					return render_page.pronouns(pronouns=pronouns)
+					return render_page.pronouns(pronouns=[pronouns])
 			
 			# Two is enough to construct SOME pronouns
 			pronouns = [n.capitalize() for n in pronouns]
-			return render_page.pronouns(pronouns=pronouns)
+			return render_page.pronouns(pronouns=[pronouns])
 		elif len(pronouns) == 3:
 			pronouns = [n.capitalize() for n in pronouns]
-			return render_page.pronouns(pronouns=pronouns)
-		
-		return render_page.error(error="You have specified too many pronouns! Try 3, in a nominative/possesive/oblique format.")
+			return render_page.pronouns(pronouns=[pronouns])
+		else:
+			# length is greater than that, is there an &&?
+			if not "&&" in pronouns:
+				return render_page.error(error="You have specified too many pronouns! Try 3, in a nominative/possesive/oblique format.<br>If you wish to have another set, seperate it with &&.")
+			
+			a = [] # The new list
+			b = [] # Current List working on
+			for p in pronouns:
+				if p == "&&":
+					a.append(b)
+					b = []
+					continue
+				b.append(p)
+			a.append(b)
+			
+			return render_page.pronouns(pronouns=a)
+
+
 
 class stylesheet: # TODO: is it inefficient to serve it every time? Maybe compile the scss when ran and serve that!
 	def GET(self, args):

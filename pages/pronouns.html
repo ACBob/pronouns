@@ -2,15 +2,20 @@
 {% block content %}
 <main>
 	<h3>my pronouns are</h3>
-	<h1>{{ ', '.join(pronouns) }}</h1>
-	<p>For Example...</p>
-	<ul>
-		<li><strong>{{pronouns[0]}}</strong> owns this car.</li>
-		<li>That is <strong>{{pronouns[2]}}</strong> car.</li>
-		{% if pronouns|length == 3 %}
-			<li>Yes, that dragon is <strong>{{pronouns[1]}}</strong>.</li>
+	{% for set in pronouns %}
+		<h1>{{ ', '.join(set) }}</h1>
+		<p>For Example...</p>
+		<ul>
+			<li><strong>{{set[0]}}</strong> owns this car.</li>
+			<li>That is <strong>{{set[2]}}</strong> car.</li>
+			{% if set|length == 3 %}
+				<li>Yes, that dragon is <strong>{{set[1]}}</strong>.</li>
+			{% endif %}
+			<li><strong>{{set[2]}}</strong> pet loves <strong>{{set[1]}}</strong>. <strong>{{set[0]}}</strong> loves <strong>{{set[2]}}</strong> pet.</li>
+		</ul>
+		{% if pronouns|length > 1 and set != pronouns[-1] %}
+			<p>Or</p>
 		{% endif %}
-		<li><strong>{{pronouns[2]}}</strong> pet loves <strong>{{pronouns[1]}}</strong>. <strong>{{pronouns[0]}}</strong> loves <strong>{{pronouns[2]}}</strong> pet.</li>
-	</ul>
+	{% endfor %}
 </main>
 {% endblock %}
