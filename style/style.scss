@@ -1,23 +1,11 @@
-@keyframes wave {
-	0% {
-		background-position: 0 90vh, 72vw 45vh;
-	}
-	50% {
-		background-position: 50vw 89vh, 72vw 45vh;
-	}
-	100% {
-		background-position: 100vw 90vh, 72vw 45vh;
-	}
-}
-
 body {
-	background-color: #87ceeb;
+	background-color: #00070c;
 
-	background-image: url('/waves.svg'),url('/island.svg');
-	background-size: 100%, 25%;
-	background-position-y: 90vh;
+	background-image: url('/planet.svg'), url('/stars.svg');
+	background-size: 25%, cover;
+	background-position: 69vw 25vh, 0 0;
 
-	background-repeat: repeat-x, no-repeat;
+	background-repeat: no-repeat, repeat;
 
 	animation: wave linear infinite 30s;
 }
@@ -37,8 +25,8 @@ main {
 	font-size: 150%;
 
 	top: 50%;
-	left: 30%;
-	transform: translate(-30%, -50%);
+	left: 15%;
+	transform: translate(-15%, -50%);
 
 	box-shadow: #777 0 7px 0;
 
