@@ -43,7 +43,7 @@ class pronoun:
 					pronouns = [pronoun.capitalize() for pronoun in n]
 					return render_page.pronouns(pronouns=pronouns)
 			
-			return "Pronoun not found, qualify more!"
+			return render_page.error(error="We don't seem to know that one! Try specifying them all, in a nominative/possesive/oblique format.")
 		elif len(pronouns) == 2:
 			# Try a built-in again
 			a = pronouns[0]
@@ -60,7 +60,7 @@ class pronoun:
 			pronouns = [n.capitalize() for n in pronouns]
 			return render_page.pronouns(pronouns=pronouns)
 		
-		return "Too many qualifiers."
+		return render_page.error(error="You have specified too many pronouns! Try 3, in a nominative/possesive/oblique format.")
 
 class stylesheet: # TODO: is it inefficient to serve it every time? Maybe compile the scss when ran and serve that!
 	def GET(self, args):
