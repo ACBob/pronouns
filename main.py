@@ -46,6 +46,29 @@ class pronoun:
 		if pronouns == ['']:
 			# TODO: HOMEPAGE
 			return render_page.index()
+		elif '&&' in args:
+			a = [] # The new list
+			b = [] # Current List working on
+			for p in pronouns:
+				g = test_pronouns([p])
+				if not g is None:
+					a.append(g[0])
+					b = []
+					continue
+
+				if p == "&&":
+					if len(b) > 0:
+						a.append(b)
+						b = []
+					continue
+
+				b.append(p)
+			if len(b) > 0:
+				a.append(b)
+
+			print(a)
+			
+			return render_page.pronouns(pronouns=a)
 		elif len(pronouns) == 1:
 			# Try a built-in pronoun
 			a = test_pronouns(pronouns)
@@ -65,24 +88,8 @@ class pronoun:
 		elif len(pronouns) == 3:
 			pronouns = [n.capitalize() for n in pronouns]
 			return render_page.pronouns(pronouns=[pronouns])
-		else:
-			# length is greater than that, is there an &&?
-			if not "&&" in pronouns:
+		elif not "&&" in pronouns:
 				return render_page.error(error="You have specified too many pronouns! Try 3, in a nominative/possesive/oblique format.<br>If you wish to have another set, seperate it with &&.")
-			
-			a = [] # The new list
-			b = [] # Current List working on
-			for p in pronouns:
-				if p == "&&":
-					if len(b) in [1,2]:
-						pass
-					a.append(b)
-					b = []
-					continue
-				b.append(p)
-			a.append(b)
-			
-			return render_page.pronouns(pronouns=a)
 
 
 
