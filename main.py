@@ -2,6 +2,7 @@
 # Because a closed-off request database isn't very helpful for self-expression
 
 import web
+from web.contrib.template import render_jinja
 
 urls = (
 	'/(.*)', 'pronoun'
@@ -15,13 +16,17 @@ builtin_pronouns = [
 	["it", "that", "its"] # Neo
 ]
 
+render_page = render_jinja('pages', encoding='utf-8')
+
 class pronoun:
 	def GET(self, name):
 		pronouns = name.split('/')
 
-		if len(pronouns) == 0:
+		print(pronouns)
+
+		if pronouns == ['']:
 			# TODO: HOMEPAGE
-			return "Welcome to pronounisland"
+			return render_page.index()
 		elif len(pronouns) == 1:
 			# Try a built-in pronoun
 			a = pronouns[0]
@@ -38,7 +43,7 @@ class pronoun:
 					return ', '.join(n)
 			
 			# Two is enough to construct pronouns
-			return TODO
+			return "TODO"
 		elif len(pronouns) == 3:
 			return ', '.join(pronouns)
 		
