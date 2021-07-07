@@ -16,6 +16,8 @@ main {
 	background-color: #fff;
 	width: 50vw;
 	min-height: 25vh;
+	max-height: 80vh;
+	overflow-y: auto;
 	border-radius: 3em;
 
 	padding: 1.5em;
@@ -32,6 +34,7 @@ main {
 
 	&.issue {
 		background-color: #f77;
+		box-shadow: #711 0 7px 0;
 	}
 
 	h1, h3 {
