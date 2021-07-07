@@ -1,12 +1,12 @@
 @keyframes wave {
 	0% {
-		background-position: 0 90vh, 76vw 48vh;
+		background-position: 0 90vh, 72vw 45vh;
 	}
 	50% {
-		background-position: 50vw 89vh, 76vw 48vh;
+		background-position: 50vw 89vh, 72vw 45vh;
 	}
 	100% {
-		background-position: 100vw 90vh, 76vw 48vh;
+		background-position: 100vw 90vh, 72vw 45vh;
 	}
 }
 
@@ -37,8 +37,8 @@ main {
 	font-size: 150%;
 
 	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	left: 30%;
+	transform: translate(-30%, -50%);
 
 	box-shadow: #777 0 7px 0;
 
