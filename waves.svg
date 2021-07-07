@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 900 194.87053"
+   width="900"
+   height="194.87053"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="waves.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1048"
+     id="namedview6"
+     showgrid="false"
+     inkscape:pagecheckerboard="true"
+     inkscape:zoom="16"
+     inkscape:cx="880.19028"
+     inkscape:cy="177.90724"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <path
+     d="m 0,22.870529 9.3,-2 c 9.4,-2 28,-6 46.9,-6 18.8,0 37.8,4 56.6,1.5 18.9,-2.5 37.5,-11.4999996 56.2,-13.1999996 18.7,-1.6 37.3,4 56,8.8999996 18.7,4.8 37.3,8.8 56.2,6.6 18.8,-2.1 37.8,-10.4999996 56.6,-13.2999996 18.9,-2.8 37.5,-0.2 56.2,2.7 18.7,2.7999996 37.3,5.7999996 56,4.9999996 18.7,-0.9 37.3,-5.4999996 56.2,-5.3999996 18.8,0.2 37.8,5.1999996 56.6,5.6999996 18.9,0.5 37.5,-3.4999996 56.2,-7.2999996 18.7,-3.9 37.3,-7.5 56,-5.50000004 18.7,2.00000004 37.3,9.59999964 56.2,13.09999964 18.8,3.5 37.8,2.9 56.6,1.5 18.9,-1.3 37.5,-3.3 56.2,-3.1 18.7,0.1 37.3,8.5 46.7,9.6 l 9.3,1.2 V 194.87053 H 890.7 844 787.8 731.2 675 619 562.8 506.2 450 394 337.8 281.2 225 169 112.8 56.2 9.3 0 Z"
+     id="path2"
+     inkscape:connector-curvature="0"
+     style="fill:#0066ff;stroke-linecap:round;stroke-linejoin:miter"
+     sodipodi:nodetypes="ccsccccccccccsccccccccccccccccccccccccc" />
+</svg>

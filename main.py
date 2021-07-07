@@ -7,6 +7,7 @@ from scss import compiler
 
 urls = (
 	'/(.*)\.css', 'stylesheet', # Preprocesses the stylesheet with sass
+	'/(.*)\.svg', 'svg', # returns the svg
 	'/(.*)', 'pronoun'
 )
 app = web.application(urls, globals())
@@ -65,6 +66,10 @@ class pronoun:
 class stylesheet: # TODO: is it inefficient to serve it every time? Maybe compile the scss when ran and serve that!
 	def GET(self, args):
 		return compiler.compile_file(args+".scss")
+
+class svg:
+	def GET(self, args):
+		return open(args+".svg").read()
 
 
 if __name__ == "__main__":

@@ -1,22 +1,58 @@
+@keyframes wave {
+	0% {
+		background-position: 0 90vh, 76vw 48vh;
+	}
+	50% {
+		background-position: 50vw 89vh, 76vw 48vh;
+	}
+	100% {
+		background-position: 100vw 90vh, 76vw 48vh;
+	}
+}
+
 body {
-	background-color: #5f9ea0;
+	background-color: #87ceeb;
+
+	background-image: url('/waves.svg'),url('/island.svg');
+	background-size: 100%, 25%;
+	background-position-y: 90vh;
+
+	background-repeat: repeat-x, no-repeat;
+
+	animation: wave linear infinite 30s;
 }
 
 main {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 	background-color: #fff;
 	width: 50vw;
 	min-height: 25vh;
 	border-radius: 3em;
 
-	padding: 1em;
+	padding: 1.5em;
 
 	position: absolute;
+
+	font-size: 150%;
 
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 
+	box-shadow: #777 0 7px 0;
+
 	&.issue {
 		background-color: #f77;
+	}
+
+	h1, h3 {
+		margin: 0;
+	}
+
+	h3 {
+		color: #999;
+		font-weight: normal;
+		font-style: italic;
 	}
 }
