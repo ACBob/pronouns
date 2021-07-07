@@ -27,6 +27,18 @@ builtin_pronouns = [
 
 render_page = render_jinja('pages', encoding='utf-8')
 
+def test_pronouns(nouns):
+	a = nouns[0]
+	for n in builtin_pronouns:
+		if a == n[0]:
+			if len(nouns) > 1:
+				if not nouns[1] == n[1]:
+					continue
+			
+			return [[pronoun.capitalize() for pronoun in n]]
+	
+	return None
+
 class pronoun:
 	def GET(self, args):
 		pronouns = args.split('/')
@@ -36,21 +48,16 @@ class pronoun:
 			return render_page.index()
 		elif len(pronouns) == 1:
 			# Try a built-in pronoun
-			a = pronouns[0]
-			for n in builtin_pronouns:
-				if a == n[0]:
-					pronouns = [pronoun.capitalize() for pronoun in n]
-					return render_page.pronouns(pronouns=[pronouns])
+			a = test_pronouns(pronouns)
+			if not a is None:
+				return render_page.pronouns(pronouns=a)
 			
 			return render_page.error(error="We don't seem to know that one! Try specifying them all, in a nominative/possesive/oblique format.")
 		elif len(pronouns) == 2:
 			# Try a built-in again
-			a = pronouns[0]
-			for n in builtin_pronouns:
-				# Test the next one so that he/she works (OOPS)
-				if a == n[0] and pronouns[1] == n[1]:
-					pronouns = [pronoun.capitalize() for pronoun in n]
-					return render_page.pronouns(pronouns=[pronouns])
+			a = test_pronouns(pronouns)
+			if not a is None:
+				return render_page.pronouns(pronouns=a)
 			
 			# Two is enough to construct SOME pronouns
 			pronouns = [n.capitalize() for n in pronouns]
@@ -67,6 +74,8 @@ class pronoun:
 			b = [] # Current List working on
 			for p in pronouns:
 				if p == "&&":
+					if len(b) in [1,2]:
+						pass
 					a.append(b)
 					b = []
 					continue
